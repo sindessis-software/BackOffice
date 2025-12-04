@@ -11,6 +11,11 @@ const (
 	templateBase = templateDir + "base.html"
 )
 
+func Login(rw http.ResponseWriter, r *http.Request) {
+	template, _ := template.ParseFiles("templates/login.html")
+	template.Execute(rw, nil)
+}
+
 func Index(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, templateBase, "index.html", nil)
 }
