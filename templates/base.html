@@ -150,6 +150,38 @@
                     aria-label="Search"/>
             </div>
         </header>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+            <symbol id="people-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                ></path>
+            </symbol>
+
+            <symbol id="grid" viewBox="0 0 16 16">
+                <path
+                  d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"
+                ></path>
+            </symbol>
+
+            <symbol id="table" viewBox="0 0 16 16">
+                <path
+                  d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"
+                ></path>
+              </symbol>
+
+              <symbol id="speedometer2" viewBox="0 0 16 16">
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"
+                ></path>
+              </symbol>
+
+        </svg>
         <div class="container-fluid">
             <div class="row">
                 <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
@@ -168,49 +200,75 @@
                         </button>
                     </div>
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+                            <span>Administracion</span>
+                            <a class="link-secondary" href="#" aria-label="Add a new report"></a>
+                        </h6>
+                        <ul class="nav flex-column mb-auto">
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2" href="/Usuarios">
+                                    <svg class="bi d-block mb-1" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="#people-circle"></use>
+                                    </svg>
+                                    Usuarios
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2" href="/Productos">
+                                    <svg class="bi d-block mb-1" width="24" height="24" aria-hidden="true">
+                                        <use xlink:href="#grid"></use>
+                                    </svg>
+                                    Productos
+                                </a>
+                            </li>               
+                        </ul>
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+                            <span>Mostrador</span>
+                            <a class="link-secondary" href="#" aria-label="Add a new report"></a>
+                        </h6>                        
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/dashboard">Dashboard </a>
+                                <a class="nav-link d-flex align-items-center gap-2" href="/Mostrador">Ventas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="/about">Orders</a>
+                                <a class="nav-link d-flex align-items-center gap-2" href="/Productos">Frutas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="/login">Products</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">Customers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">Reports</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">Integrations</a>
+                                <a class="nav-link d-flex align-items-center gap-2" href="/Usuarios">Veduras</a>
                             </li>
                         </ul>
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
-                        <span>Saved reports</span>
+                        <span>Reportes</span>
                         <a class="link-secondary" href="#" aria-label="Add a new report"></a>
                     </h6>
                     <ul class="nav flex-column mb-auto">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">Current month</a>
+                            <a class="nav-link d-flex align-items-center gap-2" href="/Dashboard">
+                                <svg class="bi d-block mb-1" width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#speedometer2"></use>
+                                </svg>
+                                Dashboard 
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">Last quarter</a>
+                            <a class="nav-link d-flex align-items-center gap-2" href="/Ventas">
+                                <svg class="bi d-block mb-1" width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#table"></use>
+                                </svg>
+                                Reporte Ventas
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">Social engagement</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">Year-end sale</a>
-                        </li>
+                            <a class="nav-link d-flex align-items-center gap-2" href="/Vendedor">
+                                <svg class="bi d-block mb-1" width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#table"></use>
+                                </svg>
+                                Reporte Vendedor
+                            </a>
+                        </li>                        
                     </ul>
                     <hr class="my-3" />
                         <ul class="nav flex-column mb-auto">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">Settings</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link d-flex align-items-center gap-2" href="#">Logout</a>
                             </li>
@@ -221,178 +279,9 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     {{ template "content" . }}
-                    <aside class="flex flex-col bg-[var(--secondary-color)] rounded-2xl p-6">
-                        <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-4">Detalle de Venta</h2>
-                        
-                        <div class="flex-1 overflow-y-auto pr-2 mb-4" id="sale-details">
-                        <div class="space-y-4" id="sale-items-container">
-                        </div>
-                        </div>
-                        <div class="mt-auto">
-                        <div class="grid grid-cols-2 gap-4 mb-4">
-                        <input class="form-input w-full rounded-xl border border-[var(--border-color)] bg-white h-16 text-lg text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)]" id="quantity-input" placeholder="Cantidad/Peso" type="number" value="1"/>
-                        <select class="form-select w-full rounded-xl border border-[var(--border-color)] bg-white h-16 text-lg text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)]" id="unit-select">
-                        <option value="kg">kg</option>
-                        <option value="pza">pza</option>
-                        </select>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                        <button class="col-span-2 flex items-center justify-center gap-2 h-16 bg-white rounded-xl text-[var(--text-primary)] font-bold text-lg hover:bg-gray-100 transition-colors" id="add-product-btn"><span class="material-symbols-outlined">add_circle</span><span>Agregar</span></button>
-                        <button class="flex items-center justify-center gap-2 h-16 bg-white rounded-xl text-[var(--text-primary)] font-bold text-lg hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined">weight</span>Pesar</button>
-                        <button class="flex items-center justify-center gap-2 h-16 bg-white rounded-xl text-[var(--text-primary)] font-bold text-lg hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined">qr_code_scanner</span>Escanear</button>
-                        </div>
-                        
-                        <!-- TECLADO NUMERICO ESPECIAL -->
-                        <div class="mb-6">
-                        <div class="special-numpad-row mb-2">
-                        <button class="special-numpad-key function-button" id="special-backspace" title="Retroceso">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">backspace</span>
-                        </div>
-                        </button>
-                        <button class="special-numpad-key function-button" id="special-clear" title="Limpiar">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">close</span>
-                        </div>
-                        </button>
-                        <button class="special-numpad-key function-button" id="special-enter" title="Enter">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">keyboard_return</span>
-                        </div>
-                        </button>
-                        <button class="special-numpad-key function-button" id="special-total" title="Total">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">T</span>
-                        
-                        </div>
-                        </button>
-                        </div>
-                        
-                        <div class="special-numpad-row mb-2">
-                        <button class="special-numpad-key" id="num-7">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_7</span>
-                        <!-- <span class="text-xs">7</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key" id="num-8">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_8</span>
-                        <!-- <span class="text-xs">8</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key" id="num-9">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_9</span>
-                        <!-- <span class="text-xs">9</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key function-button" id="special-discount" title="Ajustar Descuento">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">percent_discount</span>
-                        <!-- <span class="text-xs">-%</span> -->
-                        </div>
-                        </button>
-                        </div>
-                        
-                        <div class="special-numpad-row mb-2">
-                        <button class="special-numpad-key" id="num-4">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_4</span>
-                        <!-- <span class="text-xs">4</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key" id="num-5">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_5</span>
-                        <!-- <span class="text-xs">5</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key" id="num-6">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_6</span>
-                        <!-- <span class="text-xs">6</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key function-button" id="special-price" title="Ajustar precio">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">price_check</span>
-                        <!-- <span class="text-xs">-$</span> -->
-                        </div>
-                        </button>
-                        </div>
-                        
-                        <div class="special-numpad-row mb-2">
-                        <button class="special-numpad-key" id="num-1">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_1</span>
-                        <!-- <span class="text-xs">1</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key" id="num-2">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_2</span>
-                        <!-- <span class="text-xs">2</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key" id="num-3">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_3</span>
-                        <!-- <span class="text-xs">3</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key function-button" id="special-multiply" title="Multiplicar Piezas">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">close</span>
-                        <!-- <span class="text-xs">X</span> -->
-                        </div>
-                        </button>
-                        </div>
-                        
-                        <div class="special-numpad-row">
-                        <button class="special-numpad-key" id="num-0">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_0</span>
-                        <!-- <span class="text-xs">0</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key" id="num-00">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined counter-icon">counter_0</span>
-                        <span class="material-symbols-outlined counter-icon">counter_0</span>
-                        <!-- <span class="text-xs">00</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key" id="num-dot">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">.</span>
-                        <!-- <span class="text-xs">.</span> -->
-                        </div>
-                        </button>
-                        <button class="special-numpad-key enter-button" id="special-final-enter">
-                        <div class="icon-text">
-                        <span class="material-symbols-outlined special-icon">keyboard_return</span>
-                        <!-- <span class="text-xs">Enter</span>  -->
-                        </div>
-                        </button>
-                        </div>
-                        </div>
-                        <!-- FIN TECLADO NUMÉRICO ESPECIAL -->
-                        
-                        <div class="flex justify-between items-center text-xl font-bold mb-6">
-                        <span class="text-[var(--text-primary)]">Total</span>
-                        <span class="text-[var(--primary-color)] text-3xl" id="total-price">$0.00</span>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                        <button class="h-16 bg-[var(--primary-color)] rounded-xl text-white font-bold text-lg shadow-lg hover:bg-green-500 transition-colors">Finalizar</button>
-                        <button class="h-16 bg-red-500 rounded-xl text-white font-bold text-lg hover:bg-red-600 transition-colors" id="cancel-sale-btn">Cancelar</button>
-                        </div>
-                        </div>
-                        </aside>
                 </div>
-            </main>         
+            </main>
         </div>
-
     </div> 
     <footer>
         <div class="text-center">
