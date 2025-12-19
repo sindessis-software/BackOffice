@@ -4,6 +4,127 @@
 
 {{ define "content" }} 
 
-    <h1> Pagina Productos</h1>
+<div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Administracion Productos</h4>
+    <form class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="sku" class="form-label">Sku</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="sku" 
+            placeholder="" 
+            value="" 
+            required />
+          <div class="invalid-feedback">
+            Valid Sku is required.
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <label for="Descrip" class="form-label">Descripcion</label>
+          <input 
+            type="text" 
+            class="form-control"
+            id="Descrip"
+            placeholder=""
+            value=""
+            required
+          />
+          <div class="invalid-feedback">
+            Valid Descripcion is required.
+          </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="Descshort" class="form-label">Descripcion Corta</label>
+            <input 
+              type="text" 
+              class="form-control"
+              id="Descshort"
+              placeholder=""
+              value=""
+              required
+            />
+            <div class="invalid-feedback">
+              Valid Descripcion Corta is required.
+            </div>
+        </div>
 
+        <div class="col-sm-6">
+            <label for="Iconsku" class="form-label">Icono</label>
+            <input 
+              type="text" 
+              class="form-control"
+              id="Iconsku"
+              placeholder=""
+              value=""
+              required
+            />
+            <div class="invalid-feedback">
+              Valid Icono is required.
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <label for="Imagensku" class="form-label">Imagen</label>
+            <input 
+              type="text" 
+              class="form-control"
+              id="Imagensku"
+              placeholder=""
+              value=""
+              required
+            />
+            <div class="invalid-feedback">
+              Valid Imagene is required.
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="Imagensku" class="form-label">Precio $</label>
+            <input 
+              type="text" 
+              class="form-control"
+              id="Imagensku"
+              placeholder=""
+              value=""
+              required
+            />
+            <div class="invalid-feedback">
+              Valid Precio is required.
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="country" class="form-label">Unidad</label>
+            <select class="form-select" id="country" required>
+              <option value="">Choose...</option>
+              <option>Kilos</option>
+              <option>Pieza</option>
+              <option>Paquete</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid Unidad.
+            </div>
+          </div>    
+
+        <div class="col-sm-6">
+            <label for="country" class="form-label">Categoria</label>
+            <select class="form-select" id="country" required>
+              <option value="">Choose...</option>
+              <option>Frutas</option>
+              <option>Verduras</option>
+              <option>Paquete</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid Unidad.
+            </div>
+         </div>             
+
+         <hr class="my-4" />
+
+      <button class="w-100 btn btn-primary btn-lg" type="submit">
+        Grabar Producto
+      </button>
+    </form>
+  </div>
+</div>
 {{ end }}

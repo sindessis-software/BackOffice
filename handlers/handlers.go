@@ -36,6 +36,10 @@ func Verduras(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, templateBase, "verduras.html", nil)
 }
 
+func Paquetes(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, templateBase, "paquetes.html", nil)
+}
+
 func Usuarios(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, templateBase, "usuarios.html", nil)
 }

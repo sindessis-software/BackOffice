@@ -21,6 +21,7 @@ func main() {
 	router.HandleFunc("/Mostrador", handlers.Mostrador)
 	router.HandleFunc("/Dashboard", handlers.Dashboard)
 	router.HandleFunc("/Frutas", handlers.Frutas)
+	router.HandleFunc("/Paquetes", handlers.Paquetes)
 	router.HandleFunc("/Verduras", handlers.Verduras)
 	router.HandleFunc("/Vendedor", handlers.Vendedor)
 	port := ":8090"

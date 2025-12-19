@@ -4,175 +4,261 @@
 
 {{ define "content" }} 
 
-    <h1> Pagina Mostrador</h1>
-            <aside class="flex flex-col bg-[var(--secondary-color)] rounded-2xl p-6">
-                <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-4">Detalle de Venta</h2>
-                
-                <div class="flex-1 overflow-y-auto pr-2 mb-4" id="sale-details">
-                <div class="space-y-4" id="sale-items-container">
+<div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Punto de Venta</h4>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-5">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <svg
+                      aria-label="Placeholder: Manzana"
+                      class="bd-placeholder-img card-img-top"
+                      height="100"
+                      preserveAspectRatio="xMidYMid slice"
+                      role="img"
+                      width="100%"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Manzana roja</text>
+                    </svg>
+                    <div class="card-body">
+                      <p>Manzana Roja</p>
+                      <small class="text-body-secondary">$ 25.00 Kg.</small>
+                      <div>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                          </button>
+                      </div>
+                    </div>
                 </div>
+            </div>    
+            <div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Jitomate"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Jitomate</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Jitomate</p>
+                        <small class="text-body-secondary">$ 28.00 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-auto">
-                <div class="grid grid-cols-2 gap-4 mb-4">
-                <input class="form-input w-full rounded-xl border border-[var(--border-color)] bg-white h-16 text-lg text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)]" id="quantity-input" placeholder="Cantidad/Peso" type="number" value="1"/>
-                <select class="form-select w-full rounded-xl border border-[var(--border-color)] bg-white h-16 text-lg text-[var(--text-primary)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)]" id="unit-select">
-                <option value="kg">kg</option>
-                <option value="pza">pza</option>
-                </select>
+            </div>
+            <div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Platano"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Platano</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Platano</p>
+                        <small class="text-body-secondary">$ 15.00 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                <button class="col-span-2 flex items-center justify-center gap-2 h-16 bg-white rounded-xl text-[var(--text-primary)] font-bold text-lg hover:bg-gray-100 transition-colors" id="add-product-btn"><span class="material-symbols-outlined">add_circle</span><span>Agregar</span></button>
-                <button class="flex items-center justify-center gap-2 h-16 bg-white rounded-xl text-[var(--text-primary)] font-bold text-lg hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined">weight</span>Pesar</button>
-                <button class="flex items-center justify-center gap-2 h-16 bg-white rounded-xl text-[var(--text-primary)] font-bold text-lg hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined">qr_code_scanner</span>Escanear</button>
+            </div>
+            <div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Uvas"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Uvas</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Uvas</p>
+                        <small class="text-body-secondary">$ 60.00 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- TECLADO NUMERICO ESPECIAL -->
-                <div class="mb-6">
-                <div class="special-numpad-row mb-2">
-                <button class="special-numpad-key function-button" id="special-backspace" title="Retroceso">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">backspace</span>
+            </div>
+            <div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Aguacate"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Aguacate</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Aguacate</p>
+                        <small class="text-body-secondary">$ 59.99 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                </button>
-                <button class="special-numpad-key function-button" id="special-clear" title="Limpiar">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">close</span>
+            </div>
+            <div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Aguacate"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Aguacate</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Aguacate</p>
+                        <small class="text-body-secondary">$ 59.99 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                </button>
-                <button class="special-numpad-key function-button" id="special-enter" title="Enter">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">keyboard_return</span>
+            </div><div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Aguacate"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Aguacate</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Aguacate</p>
+                        <small class="text-body-secondary">$ 59.99 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                </button>
-                <button class="special-numpad-key function-button" id="special-total" title="Total">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">T</span>
-                
+            </div><div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Aguacate"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Aguacate</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Aguacate</p>
+                        <small class="text-body-secondary">$ 59.99 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                </button>
+            </div>
+            <div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Aguacate"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Aguacate</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Aguacate</p>
+                        <small class="text-body-secondary">$ 59.99 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="special-numpad-row mb-2">
-                <button class="special-numpad-key" id="num-7">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_7</span>
-                <!-- <span class="text-xs">7</span> -->
+            </div>
+            <div class="col">    
+                <div class="card shadow-sm">
+                    <svg
+                        aria-label="Placeholder: Aguacate"
+                        class="bd-placeholder-img card-img-top"
+                        height="100"
+                        preserveAspectRatio="xMidYMid slice"
+                        role="img"
+                        width="100%"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="100%" height="100%" fill="#55595c"></rect>
+                        <text x="5%" y="50%" fill="#eceeef" dy=".3em">Aguacate</text>
+                    </svg>
+                    <div class="card-body">
+                        <p>Aguacate</p>
+                        <small class="text-body-secondary">$ 59.99 Kg.</small>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                            Agregar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                </button>
-                <button class="special-numpad-key" id="num-8">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_8</span>
-                <!-- <span class="text-xs">8</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key" id="num-9">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_9</span>
-                <!-- <span class="text-xs">9</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key function-button" id="special-discount" title="Ajustar Descuento">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">percent_discount</span>
-                <!-- <span class="text-xs">-%</span> -->
-                </div>
-                </button>
-                </div>
-                
-                <div class="special-numpad-row mb-2">
-                <button class="special-numpad-key" id="num-4">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_4</span>
-                <!-- <span class="text-xs">4</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key" id="num-5">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_5</span>
-                <!-- <span class="text-xs">5</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key" id="num-6">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_6</span>
-                <!-- <span class="text-xs">6</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key function-button" id="special-price" title="Ajustar precio">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">price_check</span>
-                <!-- <span class="text-xs">-$</span> -->
-                </div>
-                </button>
-                </div>
-                
-                <div class="special-numpad-row mb-2">
-                <button class="special-numpad-key" id="num-1">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_1</span>
-                <!-- <span class="text-xs">1</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key" id="num-2">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_2</span>
-                <!-- <span class="text-xs">2</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key" id="num-3">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_3</span>
-                <!-- <span class="text-xs">3</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key function-button" id="special-multiply" title="Multiplicar Piezas">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">close</span>
-                <!-- <span class="text-xs">X</span> -->
-                </div>
-                </button>
-                </div>
-                
-                <div class="special-numpad-row">
-                <button class="special-numpad-key" id="num-0">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_0</span>
-                <!-- <span class="text-xs">0</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key" id="num-00">
-                <div class="icon-text">
-                <span class="material-symbols-outlined counter-icon">counter_0</span>
-                <span class="material-symbols-outlined counter-icon">counter_0</span>
-                <!-- <span class="text-xs">00</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key" id="num-dot">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">.</span>
-                <!-- <span class="text-xs">.</span> -->
-                </div>
-                </button>
-                <button class="special-numpad-key enter-button" id="special-final-enter">
-                <div class="icon-text">
-                <span class="material-symbols-outlined special-icon">keyboard_return</span>
-                <!-- <span class="text-xs">Enter</span>  -->
-                </div>
-                </button>
-                </div>
-                </div>
-                <!-- FIN TECLADO NUMÉRICO ESPECIAL -->
-                
-                <div class="flex justify-between items-center text-xl font-bold mb-6">
-                <span class="text-[var(--text-primary)]">Total</span>
-                <span class="text-[var(--primary-color)] text-3xl" id="total-price">$0.00</span>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                <button class="h-16 bg-[var(--primary-color)] rounded-xl text-white font-bold text-lg shadow-lg hover:bg-green-500 transition-colors">Finalizar</button>
-                <button class="h-16 bg-red-500 rounded-xl text-white font-bold text-lg hover:bg-red-600 transition-colors" id="cancel-sale-btn">Cancelar</button>
-                </div>
-                </div>
-                </aside>
-  
-
+            </div>            
+          </div>
+        </div>
+    </div>
+</div>
 {{ end }}
