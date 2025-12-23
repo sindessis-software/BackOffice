@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"encoding/json"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -17,7 +19,13 @@ func Login(rw http.ResponseWriter, r *http.Request) {
 }
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, templateBase, "index.html", nil)
+	p, err := getUsuario(1)
+
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+		return
+	}
+	renderTemplate(w, templateBase, "index.html", p)
 }
 
 func Dashboard(w http.ResponseWriter, r *http.Request) {
@@ -68,4 +76,43 @@ func renderTemplate(w http.ResponseWriter, base, page string, data any) {
 		log.Println(err)
 		return
 	}
+}
+
+func getUsuario(id int) (*User, error) {
+	url := fmt.Sprintf("http://localhost:3000//users/%d", id)
+	fmt.Println("Obteniendo usuario con ID:", url)
+
+	resp, err := http.Get(url)
+	if err != nil {
+		fmt.Printf("error al hacer la petición GET: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		fmt.Printf("la API devolvió un código de estado: %d", resp.StatusCode)
+	}
+
+	decoder := json.NewDecoder(resp.Body)
+	var user User
+	if err := decoder.Decode(&user); err != nil {
+		fmt.Printf("error al decodificar JSON: %w", err)
+	}
+	return &user, nil
+}
+
+type User struct {
+	User      string `json:"User"`
+	UserName  string `json:"UserName"`
+	FirstName string `json:"FirstName"`
+	LastName  string `json:"LastName"`
+	Email     string `json:"Email"`
+	Acceso    []Acceso
+}
+
+type Acceso struct {
+	TypeAccess uint   `json:"type_access"`
+	DescAccess string `json:"description_access"`
+	RollAccess uint   `json:"roll_access"`
+	Status     bool   `json:"status"`
+	UserID     uint   `json:"user_id"`
 }
