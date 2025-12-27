@@ -31,11 +31,11 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		user.Usuario_email = r.Form.Get("email")
 		user.Usuario_password = r.Form.Get("password")
 		p, err := validaUsuario(user)
-		if err != nil {
-			fmt.Println("Error :", err)
-			renderTemplate(w, templateBase, "login.html", nil)
-		} else {
+		if err == nil && p != nil {
 			renderTemplate(w, templateBase, "index.html", p)
+		} else {
+			fmt.Println("Error :", err)
+			http.Redirect(w, r, "/", http.StatusSeeOther)
 		}
 	}
 }
@@ -91,21 +91,14 @@ func renderTemplate(w http.ResponseWriter, base, page string, data any) {
 }
 
 func validaUsuario(user User) (*User, error) {
-	url := "http://localhost:3000//usuariosValida"
-	fmt.Println("Obteniendo usuario con ID:", url)
-	fmt.Println("Username:", user.Usuario_email)
-	fmt.Println("Password:", user.Usuario_password)
-
+	url := "http://localhost:3000/usuariosValida"
 	jsonData, err := json.Marshal(user)
 	if err != nil {
 		fmt.Printf("error al serializar el usuario: %w", err)
 		return nil, err
 	}
-
 	fmt.Println("Struct as JSON:", string(jsonData))
-
 	resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
-
 	if err != nil {
 		fmt.Printf("error al hacer la petición POST: %w", err)
 	}
@@ -115,7 +108,6 @@ func validaUsuario(user User) (*User, error) {
 		fmt.Printf("la API devolvió un código de estado: %d", resp.StatusCode)
 		return nil, nil
 	}
-
 	decoder := json.NewDecoder(resp.Body)
 	if err := decoder.Decode(&user); err != nil {
 		fmt.Printf("error al decodificar JSON: %w", err)
