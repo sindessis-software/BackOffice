@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"html/template"
@@ -13,19 +14,30 @@ const (
 	templateBase = templateDir + "base.html"
 )
 
+var user User
+
 func Login(rw http.ResponseWriter, r *http.Request) {
+	restartValue()
 	template, _ := template.ParseFiles("templates/login.html")
 	template.Execute(rw, nil)
 }
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	p, err := getUsuario(1)
-
-	if err != nil {
-		fmt.Printf("Error: %v\n", err)
-		return
+	if r.Method == "POST" {
+		err := r.ParseForm()
+		if err != nil {
+			http.Error(w, "Error parsing form", http.StatusBadRequest)
+		}
+		user.Usuario_email = r.Form.Get("email")
+		user.Usuario_password = r.Form.Get("password")
+		p, err := validaUsuario(user)
+		if err != nil {
+			fmt.Println("Error :", err)
+			renderTemplate(w, templateBase, "login.html", nil)
+		} else {
+			renderTemplate(w, templateBase, "index.html", p)
+		}
 	}
-	renderTemplate(w, templateBase, "index.html", p)
 }
 
 func Dashboard(w http.ResponseWriter, r *http.Request) {
@@ -78,22 +90,33 @@ func renderTemplate(w http.ResponseWriter, base, page string, data any) {
 	}
 }
 
-func getUsuario(id int) (*User, error) {
-	url := fmt.Sprintf("http://localhost:3000//users/%d", id)
+func validaUsuario(user User) (*User, error) {
+	url := "http://localhost:3000//usuariosValida"
 	fmt.Println("Obteniendo usuario con ID:", url)
+	fmt.Println("Username:", user.Usuario_email)
+	fmt.Println("Password:", user.Usuario_password)
 
-	resp, err := http.Get(url)
+	jsonData, err := json.Marshal(user)
 	if err != nil {
-		fmt.Printf("error al hacer la petición GET: %w", err)
+		fmt.Printf("error al serializar el usuario: %w", err)
+		return nil, err
+	}
+
+	fmt.Println("Struct as JSON:", string(jsonData))
+
+	resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
+
+	if err != nil {
+		fmt.Printf("error al hacer la petición POST: %w", err)
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
 		fmt.Printf("la API devolvió un código de estado: %d", resp.StatusCode)
+		return nil, nil
 	}
 
 	decoder := json.NewDecoder(resp.Body)
-	var user User
 	if err := decoder.Decode(&user); err != nil {
 		fmt.Printf("error al decodificar JSON: %w", err)
 	}
@@ -101,18 +124,15 @@ func getUsuario(id int) (*User, error) {
 }
 
 type User struct {
-	User      string `json:"User"`
-	UserName  string `json:"UserName"`
-	FirstName string `json:"FirstName"`
-	LastName  string `json:"LastName"`
-	Email     string `json:"Email"`
-	Acceso    []Acceso
+	Usuario_nombre    string `gorm:"not null" json:"nombre"`
+	Usuario_apellido1 string `gorm:"not null" json:"apellido1"`
+	Usuario_apellido2 string `gorm:"not null" json:"apellido2"`
+	Usuario_password  string `gorm:"not null" json:"password"`
+	Usuario_email     string `gorm:"not null;unique_index" json:"email"`
+	Usuario_permisos  string `gorm:"not null" json:"permisos"`
+	Usuario_activo    string `gorm:"not null" json:"activo"`
 }
 
-type Acceso struct {
-	TypeAccess uint   `json:"type_access"`
-	DescAccess string `json:"description_access"`
-	RollAccess uint   `json:"roll_access"`
-	Status     bool   `json:"status"`
-	UserID     uint   `json:"user_id"`
+func restartValue() {
+	user = User{}
 }

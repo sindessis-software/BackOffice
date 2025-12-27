@@ -46,12 +46,12 @@
                             <h1 clas="mb-4 text-dark text-center">Bienvenido a Huerto 23</h1>
                             <p clas="mb-4 text-dark text-center">Inicio de sesión</p> 
                         </div>
-                       <form action="/Index">
+                       <form action="/Index" method="post">
                             <div class="mb-4">
-                                <input type="email" class="form-control border-0" placeholder="Email" id="">
+                                <input type="email" class="form-control border-0" placeholder="Ingrese Usuario" name="email" id="email" required>
                             </div>
                             <div class="mb-4">
-                                <input type="password" class="form-control border-0" placeholder="Contraseña" id="">
+                                <input type="password" class="form-control border-0" placeholder="Ingrese Contraseña" name="password" id="password" required>
                             </div>
                             <div class="d-grid mb-2">
                                 <button type="submit" class="btn btn-primary btn-login rounded-3 fw-semibold">Iniciar Sesión</button>
