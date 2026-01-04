@@ -24,6 +24,8 @@ func main() {
 	router.HandleFunc("/Paquetes", handlers.Paquetes)
 	router.HandleFunc("/Verduras", handlers.Verduras)
 	router.HandleFunc("/Vendedor", handlers.Vendedor)
+	router.HandleFunc("/Clientes", handlers.Clientes)
+	router.HandleFunc("/Rclientes", handlers.Rclientes)
 	port := ":8090"
 	log.Printf("Servidor escuchando en http://localhost%s\n", port)
 	log.Fatal(http.ListenAndServe(port, router))

@@ -1,0 +1,220 @@
+{{ template "base" . }}
+
+{{ define "title" }} El Huerto 23 - Clientes {{ end }}
+
+{{ define "content" }} 
+
+<div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Administracion Clientes</h4>
+    <form class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="razonSocial" class="form-label">Razon Social</label>
+          <input
+            type="text"
+            class="form-control"
+            id="razonSocial"
+            placeholder=""
+            value=""
+            required
+          />
+          <div class="invalid-feedback">
+            Valid Razon Social is required.
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <label for="DescShort" class="form-label">Descripcion Corta</label>
+          <input
+            type="text"
+            class="form-control"
+            id="DescShort"
+            placeholder=""
+            value=""
+            required
+          />
+          <div class="invalid-feedback">
+            Valid Descripcion Corta is required.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="email" class="form-label">Email</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text">@</span>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              placeholder="email"
+              required
+            />
+            <div class="invalid-feedback">
+              Your Email is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="rfc" class="form-label">RFC</label>
+          <input
+            type="text"
+            class="form-control"
+            id="rfc"
+            placeholder=""
+            required
+          />
+          <div class="invalid-feedback">RFC code required.</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="state" class="form-label">Comprobante</label>
+          <select class="form-select" id="state" required>
+            <option value="">Choose...</option>
+            <option>Factura</option>
+            <option>Nota Mostrador</option>
+        </select>
+          <div class="invalid-feedback">
+            Please provide a valid estado.
+          </div>
+        </div>
+          
+        <div class="col-12">
+          <label for="address" class="form-label">Direccion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            placeholder="1234 Main St"
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter your address.
+          </div>
+        </div>
+        <div class="col-md-5">
+          <label for="country" class="form-label">Ciudad</label>
+          <select class="form-select" id="country" required>
+            <option value="">Choose...</option>
+            <option>United States</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid ciudad.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="state" class="form-label">Estado</label>
+          <select class="form-select" id="state" required>
+            <option value="">Choose...</option>
+            <option>Ciudad de Mexico</option>
+            <option>Estado de Mexico</option>
+        </select>
+          <div class="invalid-feedback">
+            Please provide a valid estado.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="zip" class="form-label">Codigo Postal</label>
+          <input
+            type="text"
+            class="form-control"
+            id="zip"
+            placeholder=""
+            required
+          />
+          <div class="invalid-feedback">Codigo Postal code required.</div>
+        </div>
+      </div>
+      <hr class="my-4" />
+      <h4 class="mb-3">Modo de Pago</h4>
+      <div class="my-3">
+        <div class="form-check">
+          <input
+            id="credit"
+            name="paymentMethod"
+            type="radio"
+            class="form-check-input"
+            checked
+            required
+          />
+          <label class="form-check-label" for="credit">Tarjeta de Credito</label>
+        </div>
+        <div class="form-check">
+          <input
+            id="debit"
+            name="paymentMethod"
+            type="radio"
+            class="form-check-input"
+            required
+          />
+          <label class="form-check-label" for="debit">Tarjeta de Debito</label>
+        </div>
+        <div class="form-check">
+          <input
+            id="paypal"
+            name="paymentMethod"
+            type="radio"
+            class="form-check-input"
+            required
+          />
+          <label class="form-check-label" for="paypal">PayPal</label>
+        </div>
+      </div>
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cc-name"
+            placeholder=""
+            required
+          />
+          <small class="text-body-secondary"
+            >Full name as displayed on card</small
+          >
+          <div class="invalid-feedback">Name on card is required</div>
+        </div>
+        <div class="col-md-6">
+          <label for="cc-number" class="form-label">Numero de tarjeta de credito</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cc-number"
+            placeholder=""
+            required
+          />
+          <div class="invalid-feedback">
+            Credit card number is required
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="cc-expiration" class="form-label">Fecha de Expiracion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cc-expiration"
+            placeholder=""
+            required
+          />
+          <div class="invalid-feedback">Expiration date required</div>
+        </div>
+        <div class="col-md-3">
+          <label for="cc-cvv" class="form-label">CVV</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cc-cvv"
+            placeholder=""
+            required
+          />
+          <div class="invalid-feedback">Security code required</div>
+        </div>
+      </div>
+      <hr class="my-4" />
+      <button class="w-100 btn btn-primary btn-lg" type="submit">
+        Grabar Cliente
+      </button>
+    </form>
+  </div>
+</div>
+
+{{ end }}

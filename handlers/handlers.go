@@ -80,6 +80,14 @@ func Vendedor(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, templateBase, "vendedor.html", nil)
 }
 
+func Clientes(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, templateBase, "clientes.html", nil)
+}
+
+func Rclientes(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, templateBase, "rclientes.html", nil)
+}
+
 func renderTemplate(w http.ResponseWriter, base, page string, data any) {
 	tpl := template.Must(template.ParseFiles(base, templateDir+page))
 	err := tpl.ExecuteTemplate(w, "base", data)
